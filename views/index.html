@@ -1,0 +1,45 @@
+<!DOCTYPE html> 
+<html>
+<head>
+    <title>EROAD Planning Poker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet" media="screen">
+    <link href="css/bootstrap-theme.css" rel="stylesheet" media="screen">
+    <link href="css/jquery.growl.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" type="text/css" href="css/poker.css">
+    <link href="css/themes/ui-darkness/jquery-ui.min.css" rel="stylesheet" media="screen">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body ng-app="planningShark">
+    <!-- top bar -->
+    <div id="header">
+      <div class="container">
+        <div class="navbar-header">
+            <a href="/">
+                <img src="img/header_logo.png" id="eroadLogoLoginImage" width="50" alt="EROAD">
+            </a>
+            <span id='title'>Planning Poker</span>
+        </div>
+      </div>
+    </div>
+
+<!-- angular ng-view --> 
+<div class="container">
+    <div ng-view>
+    </div>
+    <div class="footer">
+    </div>
+</div>
+<!-- JS -->
+<script src="vendor/jquery.js"></script>
+<script src="vendor/angular.min.js"></script>
+<script src="vendor/jquery.cookie.js"></script>
+<script src="vendor/jquery-ui.min.js"></script>
+<script src="vendor/bootstrap.min.js"></script>
+<script src="vendor/jquery.growl.js"></script>
+<script src="js/dist/planningshark.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<!-- end of JS -->
+</body>
+</html>

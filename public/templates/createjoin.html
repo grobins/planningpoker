@@ -1,0 +1,29 @@
+<div class="row" id="nameInput">
+    <div class="col-md-8">
+        <form ng-submit="join()">
+            <br>
+            <fieldset>
+                <div class="input-group roomform">
+                    <input name="userName" ng-model="userName"  required placeholder="'Scrum Master' or your name" class="form-control" >
+                    <input type="hidden" name="roomName" ng-model="roomName" />
+                    <span class="input-group-btn">
+                      <button class="btn btn-default" type="submit">Join!</button>
+                    </span>
+                </div>
+            </fieldset>
+            <div class="openSessions" ng-show="openSessions">
+              <p>
+                <span>Join an earlier session:</span>
+              </p>
+              <ul >
+                <li ng-repeat="session in openSessions">
+                  <!-- <a ng-href="#{{session.path}}">session from {{session.joinDate | date : 'EEEE, MMMM d @ h:mm a'}}, user is {{session.user.name}}</a> -->
+                  <a ng-href="#{{session.path}}">Join {{session.name}} as {{session.user.name}} - last session {{session.joinDate | date : 'EEE, dd MMM @ h:mm a'}}</a>
+
+                  <i class="icon-remove" ng-click="delete(session)"></i>
+                </li>
+              </ul>
+            </div>
+        </form>
+    </div>
+</div>
