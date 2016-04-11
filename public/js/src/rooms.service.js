@@ -151,7 +151,13 @@
 
 		my.resetVotes = function (sendNotification) {
 			angular.forEach(my.users, function (p) {
-				p.vote = null;
+				// if(p.vote != null && typeof(p.vote) != 'undefined'){
+					
+					console.log(p);//p.vote = null;
+				// }
+
+
+
 			});
 			my.voteCount = null;
             my.subjectIsSet = null;
@@ -236,29 +242,29 @@
 		};
 
 		//calculate vote counts.
-		my.calcVoteCount = function () {
-			var vc = [];
-			angular.forEach(my.users, function (u) {
-				//we check to see if this vote is alredy 
-				var vote = null;
-				angular.forEach(vc, function (v) {
-					if (v.vote === u.vote) {
-						vote = v;
-					}
-				});
+		// my.calcVoteCount = function () {
+		// 	var vc = [];
+		// 	angular.forEach(my.users, function (u) {
+		// 		//we check to see if this vote is alredy 
+		// 		var vote = null;
+		// 		angular.forEach(vc, function (v) {
+		// 			if (v.vote === u.vote) {
+		// 				vote = v;
+		// 			}
+		// 		});
 
-				//if a user already voted using this value add 1 to it.
-				if (vote !== null) {
-					vote.count += 1;
-				} else {
-					vc.push({
-						vote : u.vote,
-						count : 1
-					});
-				}
-			});
-			my.voteCount = vc;
-		};
+		// 		//if a user already voted using this value add 1 to it.
+		// 		if (vote !== null) {
+		// 			vote.count += 1;
+		// 		} else {
+		// 			vc.push({
+		// 				vote : u.vote,
+		// 				count : 1
+		// 			});
+		// 		}
+		// 	});
+		// 	my.voteCount = vc;
+		// };
 
 		return my;
 

@@ -35,9 +35,10 @@ module.exports = function () {
   my.resetVotes = function (roomName) {
     var room = my.getRoomByName (roomName);
     for(var p in room.users) {
-      if(room.users.hasOwnProperty(p)) {
-        room.users[p].vote = null;
-      }
+      console.log('roomsCache.js ln38: ', room.users[p])
+      // if(room.users.hasOwnProperty(p)) {
+      //   room.users[p].vote = null;
+      // }
     }
     room.subject = null;
   };

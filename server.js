@@ -73,6 +73,7 @@
     io.sockets.on('connection', function (socket) {
         clients[socket.id] = socket;
         socket.on('broadcast', function (data) {
+        // io.sockets.on('broadcast', function (data) {
 
             //get the roomName from the payload.
             var roomName = data.room,
@@ -89,7 +90,7 @@
 
                 roomCache.addUpdateUser(roomName, user);
                 //respond to the user who joined with the curroomName status.
-                socket.emit('event', {
+                io.sockets.emit('event', {
                     message : {
                         eventType : 'roomStatus',
                         room : roomCache.getRoomByName(roomName)
